@@ -59,11 +59,11 @@
     "baseName": "[format('soft-{0}', parameters('bottlerCode'))]",
     "resourcePrefix": "[format('{0}-{1}', variables('baseName'), parameters('environment'))]",
     
-    "storageAccountName": "[toLower(format('{0}st{1}', replace(variables('resourcePrefix'), '-', ''), variables('uniqueSuffix')))]",
+    "storageAccountName": "[format('{0}st{1}', substring(toLower(replace(variables('resourcePrefix'), '-', '')), 0, 16), variables('uniqueSuffix'))]",
     "cosmosAccountName": "[format('{0}-cosmos-{1}', variables('resourcePrefix'), variables('uniqueSuffix'))]",
     "serviceBusNamespaceName": "[format('{0}-sb-{1}', variables('resourcePrefix'), variables('uniqueSuffix'))]",
     "eventGridTopicName": "[format('{0}-eg-{1}', variables('resourcePrefix'), variables('uniqueSuffix'))]",
-    "mlWorkspaceName": "[format('{0}-ml-{1}', variables('resourcePrefix'), variables('uniqueSuffix'))]",
+    "mlWorkspaceName": "[format('{0}-ml-{1}', substring(variables('resourcePrefix'), 0, 23), variables('uniqueSuffix'))]",
     "appInsightsName": "[format('{0}-ai-{1}', variables('resourcePrefix'), variables('uniqueSuffix'))]",
     "logAnalyticsName": "[format('{0}-law-{1}', variables('resourcePrefix'), variables('uniqueSuffix'))]",
     "functionAppName": "[format('{0}-func-{1}', variables('resourcePrefix'), variables('uniqueSuffix'))]",
