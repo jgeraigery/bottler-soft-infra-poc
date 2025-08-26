@@ -178,7 +178,7 @@
         "resource": {
           "id": "financial_data",
           "partitionKey": {
-            "paths": ["/bottler_id"],
+            "paths": ["/CALMONTH_CEDI"],
             "kind": "Hash"
           }
         }
